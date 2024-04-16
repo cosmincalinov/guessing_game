@@ -1,6 +1,6 @@
-use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
+use std::io;
 
 fn main() {
     println!("Guess a number between 1 and 100!");
@@ -23,7 +23,7 @@ fn main() {
             Err(_) => {
                 println!("Invalid input! Please enter a number!");
                 continue;
-            },
+            }
         };
 
         if guess > 100 || guess < 1 {

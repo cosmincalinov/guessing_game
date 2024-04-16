@@ -3,7 +3,7 @@ use rand::Rng;
 use std::cmp::Ordering;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Guess a number between 1 and 100!");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
@@ -25,6 +25,11 @@ fn main() {
                 continue;
             },
         };
+
+        if guess > 100 || guess < 1 {
+            println!("Please enter a valid number!");
+            continue;
+        }
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
